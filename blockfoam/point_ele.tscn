@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://point_ele.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.843137, 0, 1 )
+
+[node name="point_ele" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+visible = false
+radius = 0.1
+radial_segments = 8
+rings = 4
+material = SubResource( 1 )
+
+[node name="label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "teste"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_sel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "teste"
+__meta__ = {
+"_edit_use_anchors_": false
+}

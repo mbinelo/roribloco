@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://line_3d.gd" type="Script" id=1]
+
+[node name="line_3d" type="Line2D"]
+points = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+width = 1.0
+default_color = Color( 1, 1, 1, 0.560784 )
+script = ExtResource( 1 )

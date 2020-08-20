@@ -1,0 +1,2663 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://main_window.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://img/lapis.png" type="Texture" id=3]
+[ext_resource path="res://img/lapis16.png" type="Texture" id=4]
+[ext_resource path="res://img/del16.png" type="Texture" id=5]
+[ext_resource path="res://img/del10.png" type="Texture" id=6]
+[ext_resource path="res://xyz.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.5
+
+[node name="main_window" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Tree" type="Tree" parent="."]
+anchor_bottom = 1.0
+margin_right = 351.0
+columns = 2
+hide_root = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="."]
+visible = false
+position = Vector2( 457.115, 208.431 )
+texture = ExtResource( 2 )
+
+[node name="lapis" type="Sprite" parent="."]
+visible = false
+position = Vector2( 584.394, 291.87 )
+texture = ExtResource( 3 )
+
+[node name="del16" type="Sprite" parent="."]
+position = Vector2( 645.536, -128.154 )
+texture = ExtResource( 5 )
+
+[node name="del10" type="Sprite" parent="."]
+position = Vector2( 690.945, -128.154 )
+texture = ExtResource( 6 )
+
+[node name="lapis16" type="Sprite" parent="."]
+visible = false
+position = Vector2( 697.531, 376.723 )
+texture = ExtResource( 4 )
+
+[node name="panel_edit_point" type="Panel" parent="."]
+margin_left = 83.4126
+margin_top = -580.738
+margin_right = 329.413
+margin_bottom = -521.738
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_edit_point"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_edit_point"]
+margin_left = 83.7574
+margin_top = 5.0
+margin_right = 157.757
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_edit_point"]
+margin_left = 163.987
+margin_top = 5.0
+margin_right = 237.987
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_cancel" type="Button" parent="panel_edit_point"]
+margin_left = 126.007
+margin_top = 32.0917
+margin_right = 180.007
+margin_bottom = 52.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_ok" type="Button" parent="panel_edit_point"]
+margin_left = 182.64
+margin_top = 31.6198
+margin_right = 236.64
+margin_bottom = 51.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_edge_add_point" type="Panel" parent="."]
+margin_left = 345.616
+margin_top = -582.236
+margin_right = 591.617
+margin_bottom = -523.236
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_edge_add_point"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_edge_add_point"]
+margin_left = 83.7574
+margin_top = 5.0
+margin_right = 157.757
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_edge_add_point"]
+margin_left = 163.987
+margin_top = 5.0
+margin_right = 237.987
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_edge_add_point_cancel" type="Button" parent="panel_edge_add_point"]
+margin_left = 126.007
+margin_top = 32.0917
+margin_right = 180.007
+margin_bottom = 52.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_edge_add_point_ok" type="Button" parent="panel_edge_add_point"]
+margin_left = 182.64
+margin_top = 31.6198
+margin_right = 236.64
+margin_bottom = 51.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_add_point" type="Panel" parent="."]
+margin_left = 606.616
+margin_top = -582.236
+margin_right = 852.617
+margin_bottom = -523.236
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_add_point"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_add_point"]
+margin_left = 83.7574
+margin_top = 5.0
+margin_right = 157.757
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_add_point"]
+margin_left = 163.987
+margin_top = 5.0
+margin_right = 237.987
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_add_point_cancel" type="Button" parent="panel_add_point"]
+margin_left = 126.007
+margin_top = 32.0917
+margin_right = 180.007
+margin_bottom = 52.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_add_point_ok" type="Button" parent="panel_add_point"]
+margin_left = 182.64
+margin_top = 31.6198
+margin_right = 236.64
+margin_bottom = 51.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_add_block" type="Panel" parent="."]
+margin_left = 1131.0
+margin_top = -513.0
+margin_right = 1390.0
+margin_bottom = -317.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_1" type="TextEdit" parent="panel_add_block"]
+margin_left = 39.3553
+margin_top = 129.116
+margin_right = 79.3553
+margin_bottom = 150.116
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_2" type="TextEdit" parent="panel_add_block"]
+margin_left = 151.355
+margin_top = 129.116
+margin_right = 191.355
+margin_bottom = 150.116
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_3" type="TextEdit" parent="panel_add_block"]
+margin_left = 183.355
+margin_top = 97.1163
+margin_right = 223.355
+margin_bottom = 118.116
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_4" type="TextEdit" parent="panel_add_block"]
+margin_left = 71.3553
+margin_top = 97.1163
+margin_right = 111.355
+margin_bottom = 118.116
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_5" type="TextEdit" parent="panel_add_block"]
+margin_left = 39.3553
+margin_top = 57.1163
+margin_right = 79.3553
+margin_bottom = 78.1163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_6" type="TextEdit" parent="panel_add_block"]
+margin_left = 151.355
+margin_top = 57.1163
+margin_right = 191.355
+margin_bottom = 78.1163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_7" type="TextEdit" parent="panel_add_block"]
+margin_left = 183.355
+margin_top = 25.1163
+margin_right = 223.355
+margin_bottom = 46.1163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_8" type="TextEdit" parent="panel_add_block"]
+margin_left = 71.3553
+margin_top = 25.1163
+margin_right = 111.355
+margin_bottom = 46.1163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_add_block_cancel" type="Button" parent="panel_add_block"]
+margin_left = 138.028
+margin_top = 168.676
+margin_right = 192.028
+margin_bottom = 188.676
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_add_block_ok" type="Button" parent="panel_add_block"]
+margin_left = 194.661
+margin_top = 169.204
+margin_right = 248.661
+margin_bottom = 189.204
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2D" type="Line2D" parent="panel_add_block"]
+position = Vector2( 1, 0 )
+points = PoolVector2Array( 78.6024, 138.503, 149.313, 138.503 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D2" type="Line2D" parent="panel_add_block"]
+position = Vector2( 33, -31 )
+points = PoolVector2Array( 78.6024, 138.503, 149.313, 138.503 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D3" type="Line2D" parent="panel_add_block"]
+position = Vector2( 1, -72 )
+points = PoolVector2Array( 78.6024, 138.503, 149.313, 138.503 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D4" type="Line2D" parent="panel_add_block"]
+position = Vector2( 1, -72 )
+points = PoolVector2Array( 78.6024, 138.503, 149.313, 138.503 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D5" type="Line2D" parent="panel_add_block"]
+position = Vector2( 33, -103 )
+points = PoolVector2Array( 78.6024, 138.503, 149.313, 138.503 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D6" type="Line2D" parent="panel_add_block"]
+position = Vector2( -39, -90 )
+points = PoolVector2Array( 97.8035, 167.692, 97.8035, 220.725 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D10" type="Line2D" parent="panel_add_block"]
+position = Vector2( -19, -90 )
+points = PoolVector2Array( 103.909, 207.489, 93.5149, 219.143 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D11" type="Line2D" parent="panel_add_block"]
+position = Vector2( 95, -90 )
+points = PoolVector2Array( 103.909, 207.489, 93.5149, 219.143 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D12" type="Line2D" parent="panel_add_block"]
+position = Vector2( 95, -162 )
+points = PoolVector2Array( 103.909, 207.489, 93.5149, 219.143 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D13" type="Line2D" parent="panel_add_block"]
+position = Vector2( -19, -162 )
+points = PoolVector2Array( 103.909, 207.489, 93.5149, 219.143 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D7" type="Line2D" parent="panel_add_block"]
+position = Vector2( 73, -90 )
+points = PoolVector2Array( 97.8035, 167.692, 97.8035, 220.725 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D8" type="Line2D" parent="panel_add_block"]
+position = Vector2( 106, -122 )
+points = PoolVector2Array( 97.8035, 167.692, 97.8035, 220.725 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Line2D9" type="Line2D" parent="panel_add_block"]
+position = Vector2( -6, -122 )
+points = PoolVector2Array( 97.8035, 167.692, 97.8035, 220.725 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="panel_add_block"]
+margin_left = 20.0
+margin_top = 143.0
+margin_right = 38.0
+margin_bottom = 157.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="panel_add_block"]
+margin_left = 132.0
+margin_top = 143.0
+margin_right = 150.0
+margin_bottom = 157.0
+text = "1"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="panel_add_block"]
+margin_left = 165.0
+margin_top = 113.0
+margin_right = 183.0
+margin_bottom = 127.0
+text = "2"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="panel_add_block"]
+margin_left = 52.0
+margin_top = 113.0
+margin_right = 70.0
+margin_bottom = 127.0
+text = "3"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="panel_add_block"]
+margin_left = 20.0
+margin_top = 72.0
+margin_right = 38.0
+margin_bottom = 86.0
+text = "4"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="panel_add_block"]
+margin_left = 131.0
+margin_top = 72.0
+margin_right = 149.0
+margin_bottom = 86.0
+text = "5"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="panel_add_block"]
+margin_left = 164.0
+margin_top = 41.0
+margin_right = 182.0
+margin_bottom = 55.0
+text = "6"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="panel_add_block"]
+margin_left = 52.0
+margin_top = 41.0
+margin_right = 70.0
+margin_bottom = 55.0
+text = "7"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_create_master_block" type="Panel" parent="."]
+margin_left = 84.1874
+margin_top = -516.709
+margin_right = 408.187
+margin_bottom = -349.709
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_ini" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_ini" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_ini" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_fim" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 158.0
+margin_bottom = 52.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_fim" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 163.757
+margin_top = 31.0
+margin_right = 237.757
+margin_bottom = 52.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_fim" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 243.987
+margin_top = 31.0
+margin_right = 317.987
+margin_bottom = 52.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_xcuts" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 84.0
+margin_top = 58.0
+margin_right = 318.0
+margin_bottom = 79.0
+text = "0.3;0.7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_ycuts" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 84.0
+margin_top = 85.0
+margin_right = 317.0
+margin_bottom = 106.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_zcuts" type="TextEdit" parent="panel_create_master_block"]
+margin_left = 84.0
+margin_top = 112.0
+margin_right = 317.0
+margin_bottom = 133.0
+text = "0.5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_cancel" type="Button" parent="panel_create_master_block"]
+margin_left = 205.007
+margin_top = 140.092
+margin_right = 259.007
+margin_bottom = 160.092
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_ok" type="Button" parent="panel_create_master_block"]
+margin_left = 261.64
+margin_top = 139.62
+margin_right = 315.64
+margin_bottom = 159.62
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_create_master_block"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "begin point"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_create_master_block"]
+margin_left = 6.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+text = "end point"
+align = 2
+
+[node name="Label3" type="Label" parent="panel_create_master_block"]
+margin_left = 6.0
+margin_top = 62.0
+margin_right = 78.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 59.3844, 32 )
+text = "x cuts"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="panel_create_master_block"]
+margin_left = 7.0
+margin_top = 89.0
+margin_right = 79.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 59.3844, 32 )
+text = "y cuts"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="panel_create_master_block"]
+margin_left = 7.0
+margin_top = 116.0
+margin_right = 79.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 59.3844, 32 )
+text = "z cuts"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_set_cells" type="Panel" parent="."]
+margin_left = 418.646
+margin_top = -515.428
+margin_right = 742.646
+margin_bottom = -456.428
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_set_cells"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_set_cells"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_set_cells"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_set_cell_cancel" type="Button" parent="panel_set_cells"]
+margin_left = 205.007
+margin_top = 34.0917
+margin_right = 259.007
+margin_bottom = 54.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_set_cell_ok" type="Button" parent="panel_set_cells"]
+margin_left = 261.64
+margin_top = 33.6198
+margin_right = 315.64
+margin_bottom = 53.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_set_cells"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "max length"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_block_edit_cells" type="Panel" parent="."]
+margin_left = 422.425
+margin_top = -305.021
+margin_right = 746.425
+margin_bottom = -246.021
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_block_edit_cells"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_block_edit_cells"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_block_edit_cells"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_cell_cancel" type="Button" parent="panel_block_edit_cells"]
+margin_left = 205.007
+margin_top = 34.0917
+margin_right = 259.007
+margin_bottom = 54.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_cell_ok" type="Button" parent="panel_block_edit_cells"]
+margin_left = 261.64
+margin_top = 33.6198
+margin_right = 315.64
+margin_bottom = 53.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_block_edit_cells"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "cells"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_block_edit_simple" type="Panel" parent="."]
+margin_left = 422.425
+margin_top = -305.021
+margin_right = 746.425
+margin_bottom = -246.021
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_block_edit_simple"]
+margin_left = 106.0
+margin_top = 5.0
+margin_right = 171.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_block_edit_simple"]
+margin_left = 178.0
+margin_top = 5.0
+margin_right = 243.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_block_edit_simple"]
+margin_left = 250.0
+margin_top = 5.0
+margin_right = 315.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_simple_cancel" type="Button" parent="panel_block_edit_simple"]
+margin_left = 205.007
+margin_top = 34.0917
+margin_right = 259.007
+margin_bottom = 54.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_simple_ok" type="Button" parent="panel_block_edit_simple"]
+margin_left = 261.64
+margin_top = 33.6198
+margin_right = 315.64
+margin_bottom = 53.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_block_edit_simple"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "simple grading"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_block_edit_edge_grading" type="Panel" parent="."]
+margin_left = 752.948
+margin_top = -444.001
+margin_right = 1076.95
+margin_bottom = -385.001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_1" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 96.0
+margin_top = 5.0
+margin_right = 128.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_2" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 133.0
+margin_top = 5.0
+margin_right = 165.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_3" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 170.745
+margin_top = 5.21542
+margin_right = 202.745
+margin_bottom = 26.2154
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_4" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 208.745
+margin_top = 5.21542
+margin_right = 240.745
+margin_bottom = 26.2154
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_5" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 246.745
+margin_top = 5.21542
+margin_right = 278.745
+margin_bottom = 26.2154
+rect_pivot_offset = Vector2( -17, 6.35773 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_6" type="TextEdit" parent="panel_block_edit_edge_grading"]
+margin_left = 283.745
+margin_top = 5.21542
+margin_right = 315.745
+margin_bottom = 26.2154
+rect_pivot_offset = Vector2( -17, 6.35773 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_edge_grading_cancel" type="Button" parent="panel_block_edit_edge_grading"]
+margin_left = 205.007
+margin_top = 34.0917
+margin_right = 259.007
+margin_bottom = 54.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_edge_grading_ok" type="Button" parent="panel_block_edit_edge_grading"]
+margin_left = 261.64
+margin_top = 34.3689
+margin_right = 315.64
+margin_bottom = 54.3689
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_block_edit_edge_grading"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 85.0
+margin_bottom = 23.0
+text = "edge grading"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_collapse_points" type="Panel" parent="."]
+margin_left = 418.646
+margin_top = -446.428
+margin_right = 742.646
+margin_bottom = -387.428
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p1" type="TextEdit" parent="panel_collapse_points"]
+margin_left = 104.0
+margin_top = 5.0
+margin_right = 169.0
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p2" type="TextEdit" parent="panel_collapse_points"]
+margin_left = 252.0
+margin_top = 5.0
+margin_right = 316.0
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_collapse_point_cancel" type="Button" parent="panel_collapse_points"]
+margin_left = 205.007
+margin_top = 34.0917
+margin_right = 259.007
+margin_bottom = 54.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_collapse_point_ok" type="Button" parent="panel_collapse_points"]
+margin_left = 261.64
+margin_top = 33.6198
+margin_right = 315.64
+margin_bottom = 53.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_collapse_points"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "collapse point"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="panel_collapse_points"]
+margin_left = 156.0
+margin_top = 9.0
+margin_right = 246.0
+margin_bottom = 23.0
+text = "into point"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_boundary_add_faces" type="Panel" parent="."]
+margin_left = 84.1874
+margin_top = -179.374
+margin_right = 408.187
+margin_bottom = -93.3743
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_ini" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_ini" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_ini" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_fim" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 158.0
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_fim" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 163.757
+margin_top = 31.0
+margin_right = 237.757
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_fim" type="TextEdit" parent="panel_boundary_add_faces"]
+margin_left = 243.987
+margin_top = 31.0
+margin_right = 317.987
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_add_faces_cancel" type="Button" parent="panel_boundary_add_faces"]
+margin_left = 205.007
+margin_top = 59.0917
+margin_right = 259.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_add_faces_preview" type="Button" parent="panel_boundary_add_faces"]
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_add_faces_ok" type="Button" parent="panel_boundary_add_faces"]
+margin_left = 261.64
+margin_top = 58.6198
+margin_right = 315.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_boundary_add_faces"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "begin point"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_boundary_add_faces"]
+margin_left = 6.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+text = "end point"
+align = 2
+
+[node name="panel_blocks_remove" type="Panel" parent="."]
+margin_left = 430.666
+margin_top = -103.149
+margin_right = 754.665
+margin_bottom = -17.1491
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_ini" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_ini" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_ini" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_fim" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 158.0
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_fim" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 163.757
+margin_top = 31.0
+margin_right = 237.757
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_fim" type="TextEdit" parent="panel_blocks_remove"]
+margin_left = 243.987
+margin_top = 31.0
+margin_right = 317.987
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_blocks_remove_cancel" type="Button" parent="panel_blocks_remove"]
+margin_left = 205.007
+margin_top = 59.0917
+margin_right = 259.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_blocks_remove_preview" type="Button" parent="panel_blocks_remove"]
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_blocks_remove_ok" type="Button" parent="panel_blocks_remove"]
+margin_left = 261.64
+margin_top = 58.6198
+margin_right = 315.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_blocks_remove"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "begin point"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_blocks_remove"]
+margin_left = 6.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+text = "end point"
+align = 2
+
+[node name="panel_box_sel" type="Panel" parent="."]
+margin_left = 430.666
+margin_top = -103.149
+margin_right = 754.665
+margin_bottom = -17.1491
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_ini" type="TextEdit" parent="panel_box_sel"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 158.0
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_ini" type="TextEdit" parent="panel_box_sel"]
+margin_left = 163.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_ini" type="TextEdit" parent="panel_box_sel"]
+margin_left = 243.987
+margin_top = 5.0
+margin_right = 317.987
+margin_bottom = 26.0
+text = "-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x_fim" type="TextEdit" parent="panel_box_sel"]
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 158.0
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y_fim" type="TextEdit" parent="panel_box_sel"]
+margin_left = 163.757
+margin_top = 31.0
+margin_right = 237.757
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z_fim" type="TextEdit" parent="panel_box_sel"]
+margin_left = 243.987
+margin_top = 31.0
+margin_right = 317.987
+margin_bottom = 52.0
+text = "9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_box_cancel" type="Button" parent="panel_box_sel"]
+margin_left = 205.007
+margin_top = 59.0917
+margin_right = 259.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_box_preview" type="Button" parent="panel_box_sel"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_box_ok" type="Button" parent="panel_box_sel"]
+margin_left = 261.64
+margin_top = 58.6198
+margin_right = 315.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_box_sel"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "begin point"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_box_sel"]
+margin_left = 6.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+text = "end point"
+align = 2
+
+[node name="panel_arc_by_center" type="Panel" parent="."]
+margin_left = 759.32
+margin_top = -101.878
+margin_right = 1082.32
+margin_bottom = -15.8775
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p1" type="TextEdit" parent="panel_arc_by_center"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 162.0
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p2" type="TextEdit" parent="panel_arc_by_center"]
+margin_left = 167.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_arc_by_center"]
+margin_left = 92.0
+margin_top = 31.0
+margin_right = 162.0
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_arc_by_center"]
+margin_left = 167.318
+margin_top = 31.0
+margin_right = 237.318
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_arc_by_center"]
+margin_left = 242.548
+margin_top = 31.0
+margin_right = 312.548
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_center_cancel" type="Button" parent="panel_arc_by_center"]
+margin_left = 203.007
+margin_top = 59.0917
+margin_right = 257.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_center_preview" type="Button" parent="panel_arc_by_center"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_center_ok" type="Button" parent="panel_arc_by_center"]
+margin_left = 259.64
+margin_top = 58.6198
+margin_right = 313.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_arc_by_center"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_arc_by_center"]
+margin_left = -42.0
+margin_top = 36.0
+margin_right = 90.0
+margin_bottom = 50.0
+text = "circle center"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_translation" type="Panel" parent="."]
+margin_left = 1095.91
+margin_top = -108.357
+margin_right = 1418.91
+margin_bottom = -11.3568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_translation_points" type="TextEdit" parent="panel_translation"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 35.0
+text = "0;1;2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_translation"]
+margin_left = 92.0
+margin_top = 40.0
+margin_right = 162.0
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_translation"]
+margin_left = 167.318
+margin_top = 40.0
+margin_right = 237.318
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_translation"]
+margin_left = 242.548
+margin_top = 40.0
+margin_right = 312.548
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_translation_cancel" type="Button" parent="panel_translation"]
+margin_left = 203.007
+margin_top = 70.0917
+margin_right = 257.007
+margin_bottom = 90.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_translation_box" type="Button" parent="panel_translation"]
+margin_left = 255.171
+margin_top = 5.88243
+margin_right = 313.171
+margin_bottom = 25.8824
+text = "box sel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_translation_preview" type="Button" parent="panel_translation"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_translation_ok" type="Button" parent="panel_translation"]
+margin_left = 259.64
+margin_top = 69.6198
+margin_right = 313.64
+margin_bottom = 89.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_translation"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_translation"]
+margin_left = -42.0
+margin_top = 45.0
+margin_right = 90.0
+margin_bottom = 59.0
+text = "translation"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_rotation" type="Panel" parent="."]
+margin_left = 1096.0
+margin_top = -309.0
+margin_right = 1419.0
+margin_bottom = -154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_rotation_points" type="TextEdit" parent="panel_rotation"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 35.0
+text = "0;1;2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_x" type="TextEdit" parent="panel_rotation"]
+margin_left = 92.0
+margin_top = 40.0
+margin_right = 162.0
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_y" type="TextEdit" parent="panel_rotation"]
+margin_left = 167.318
+margin_top = 40.0
+margin_right = 237.318
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_z" type="TextEdit" parent="panel_rotation"]
+margin_left = 242.548
+margin_top = 40.0
+margin_right = 312.548
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_rotation_cancel" type="Button" parent="panel_rotation"]
+margin_left = 203.007
+margin_top = 128.092
+margin_right = 257.007
+margin_bottom = 148.092
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_rotation_box" type="Button" parent="panel_rotation"]
+margin_left = 255.171
+margin_top = 5.88243
+margin_right = 313.171
+margin_bottom = 25.8824
+text = "box sel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_roation_preview" type="Button" parent="panel_rotation"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_rotation_ok" type="Button" parent="panel_rotation"]
+margin_left = 259.64
+margin_top = 127.62
+margin_right = 313.64
+margin_bottom = 147.62
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_rotation"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_rotation"]
+margin_left = -42.0
+margin_top = 45.0
+margin_right = 90.0
+margin_bottom = 59.0
+text = "center"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_axis_x" type="TextEdit" parent="panel_rotation"]
+margin_left = 92.0
+margin_top = 68.0
+margin_right = 162.0
+margin_bottom = 89.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_axis_y" type="TextEdit" parent="panel_rotation"]
+margin_left = 167.318
+margin_top = 68.0
+margin_right = 237.318
+margin_bottom = 89.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_axis_z" type="TextEdit" parent="panel_rotation"]
+margin_left = 242.548
+margin_top = 68.0
+margin_right = 312.548
+margin_bottom = 89.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="panel_rotation"]
+margin_left = -42.0
+margin_top = 73.0
+margin_right = 90.0
+margin_bottom = 87.0
+text = "axis"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_angle" type="TextEdit" parent="panel_rotation"]
+margin_left = 92.0
+margin_top = 96.0
+margin_right = 162.0
+margin_bottom = 117.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="panel_rotation"]
+margin_left = -42.0
+margin_top = 101.0
+margin_right = 90.0
+margin_bottom = 115.0
+text = "angle"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_scale" type="Panel" parent="."]
+margin_left = 1450.0
+margin_top = -314.0
+margin_right = 1773.0
+margin_bottom = -185.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_scale_points" type="TextEdit" parent="panel_scale"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 35.0
+text = "0;1;2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_x" type="TextEdit" parent="panel_scale"]
+margin_left = 92.0
+margin_top = 40.0
+margin_right = 162.0
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_y" type="TextEdit" parent="panel_scale"]
+margin_left = 167.318
+margin_top = 40.0
+margin_right = 237.318
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_center_z" type="TextEdit" parent="panel_scale"]
+margin_left = 242.548
+margin_top = 40.0
+margin_right = 312.548
+margin_bottom = 61.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_scale_cancel" type="Button" parent="panel_scale"]
+margin_left = 203.007
+margin_top = 101.092
+margin_right = 257.007
+margin_bottom = 121.092
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_scale_box" type="Button" parent="panel_scale"]
+margin_left = 255.171
+margin_top = 5.88243
+margin_right = 313.171
+margin_bottom = 25.8824
+text = "box sel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_scale_preview" type="Button" parent="panel_scale"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_scale_ok" type="Button" parent="panel_scale"]
+margin_left = 259.64
+margin_top = 100.62
+margin_right = 313.64
+margin_bottom = 120.62
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_scale"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_scale"]
+margin_left = -42.0
+margin_top = 45.0
+margin_right = 90.0
+margin_bottom = 59.0
+text = "center"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_scale_x" type="TextEdit" parent="panel_scale"]
+margin_left = 92.0
+margin_top = 68.0
+margin_right = 162.0
+margin_bottom = 89.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_scale_y" type="TextEdit" parent="panel_scale"]
+margin_left = 167.318
+margin_top = 68.0
+margin_right = 237.318
+margin_bottom = 89.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_scale_z" type="TextEdit" parent="panel_scale"]
+margin_left = 242.548
+margin_top = 68.0
+margin_right = 312.548
+margin_bottom = 89.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="panel_scale"]
+margin_left = -42.0
+margin_top = 73.0
+margin_right = 90.0
+margin_bottom = 87.0
+text = "scale"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_arc_by_point" type="Panel" parent="."]
+margin_left = 759.32
+margin_top = -197.878
+margin_right = 1082.32
+margin_bottom = -111.877
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p1" type="TextEdit" parent="panel_arc_by_point"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 162.0
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p2" type="TextEdit" parent="panel_arc_by_point"]
+margin_left = 167.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_x" type="TextEdit" parent="panel_arc_by_point"]
+margin_left = 92.0
+margin_top = 31.0
+margin_right = 162.0
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_y" type="TextEdit" parent="panel_arc_by_point"]
+margin_left = 167.318
+margin_top = 31.0
+margin_right = 237.318
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_z" type="TextEdit" parent="panel_arc_by_point"]
+margin_left = 242.548
+margin_top = 31.0
+margin_right = 312.548
+margin_bottom = 52.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_point_cancel" type="Button" parent="panel_arc_by_point"]
+margin_left = 203.007
+margin_top = 59.0917
+margin_right = 257.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_point_preview" type="Button" parent="panel_arc_by_point"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_arc_by_point_ok" type="Button" parent="panel_arc_by_point"]
+margin_left = 259.64
+margin_top = 58.6198
+margin_right = 313.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_arc_by_point"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_arc_by_point"]
+margin_left = -45.0
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 50.0
+text = "arc point"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_edge_points" type="Panel" parent="."]
+margin_left = 759.32
+margin_top = -298.878
+margin_right = 1082.32
+margin_bottom = -212.878
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p1" type="TextEdit" parent="panel_edge_points"]
+margin_left = 92.0
+margin_top = 5.0
+margin_right = 162.0
+margin_bottom = 26.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_p2" type="TextEdit" parent="panel_edge_points"]
+margin_left = 167.757
+margin_top = 5.0
+margin_right = 237.757
+margin_bottom = 26.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_edge_points_cancel" type="Button" parent="panel_edge_points"]
+margin_left = 203.007
+margin_top = 59.0917
+margin_right = 257.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_edge_points_preview" type="Button" parent="panel_edge_points"]
+visible = false
+margin_left = 5.007
+margin_top = 59.0917
+margin_right = 59.007
+margin_bottom = 79.0917
+text = "Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_edge_points_ok" type="Button" parent="panel_edge_points"]
+margin_left = 259.64
+margin_top = 58.6198
+margin_right = 313.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_edge_points"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+
+[node name="Label2" type="Label" parent="panel_edge_points"]
+margin_left = 30.0
+margin_top = 36.0
+margin_right = 279.0
+margin_bottom = 50.0
+text = "Points can be added in the items tree."
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_create_boundary" type="Panel" parent="."]
+margin_left = 84.1874
+margin_top = -336.374
+margin_right = 408.187
+margin_bottom = -252.374
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_name" type="TextEdit" parent="panel_create_boundary"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_type" type="TextEdit" parent="panel_create_boundary"]
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 314.0
+margin_bottom = 52.0
+text = "wall"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_cancel" type="Button" parent="panel_create_boundary"]
+margin_left = 205.007
+margin_top = 59.0917
+margin_right = 259.007
+margin_bottom = 79.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_ok" type="Button" parent="panel_create_boundary"]
+margin_left = 261.64
+margin_top = 58.6198
+margin_right = 315.64
+margin_bottom = 78.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_create_boundary"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "name"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="panel_create_boundary"]
+margin_left = 6.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+text = "type"
+align = 2
+
+[node name="panel_boundary_edit_faces" type="Panel" parent="."]
+margin_left = 84.1874
+margin_top = -248.374
+margin_right = 408.187
+margin_bottom = -187.374
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_faces" type="TextEdit" parent="panel_boundary_edit_faces"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_faces_cancel" type="Button" parent="panel_boundary_edit_faces"]
+margin_left = 205.007
+margin_top = 33.0917
+margin_right = 259.007
+margin_bottom = 53.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_faces_ok" type="Button" parent="panel_boundary_edit_faces"]
+margin_left = 261.64
+margin_top = 32.6198
+margin_right = 315.64
+margin_bottom = 52.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_boundary_edit_faces"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "faces"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_block_edit_points" type="Panel" parent="."]
+margin_left = 420.187
+margin_top = -376.374
+margin_right = 744.187
+margin_bottom = -315.374
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_points" type="TextEdit" parent="panel_block_edit_points"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_points_cancel" type="Button" parent="panel_block_edit_points"]
+margin_left = 205.007
+margin_top = 33.0917
+margin_right = 259.007
+margin_bottom = 53.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_points_ok" type="Button" parent="panel_block_edit_points"]
+margin_left = 261.64
+margin_top = 32.6198
+margin_right = 315.64
+margin_bottom = 52.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_block_edit_points"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "points"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_boundary_edit_name" type="Panel" parent="."]
+margin_left = 425.851
+margin_top = -238.569
+margin_right = 749.851
+margin_bottom = -177.569
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_name" type="TextEdit" parent="panel_boundary_edit_name"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_name_cancel" type="Button" parent="panel_boundary_edit_name"]
+margin_left = 205.007
+margin_top = 33.0917
+margin_right = 259.007
+margin_bottom = 53.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_name_ok" type="Button" parent="panel_boundary_edit_name"]
+margin_left = 261.64
+margin_top = 32.6198
+margin_right = 315.64
+margin_bottom = 52.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_boundary_edit_name"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "name"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_block_edit_zone" type="Panel" parent="."]
+margin_left = 751.851
+margin_top = -513.569
+margin_right = 1075.85
+margin_bottom = -452.569
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_zone" type="TextEdit" parent="panel_block_edit_zone"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_zone_cancel" type="Button" parent="panel_block_edit_zone"]
+margin_left = 205.007
+margin_top = 33.0917
+margin_right = 259.007
+margin_bottom = 53.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_block_edit_zone_ok" type="Button" parent="panel_block_edit_zone"]
+margin_left = 261.64
+margin_top = 32.6198
+margin_right = 315.64
+margin_bottom = 52.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_block_edit_zone"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "zone"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_boundary_edit_type" type="Panel" parent="."]
+margin_left = 429.851
+margin_top = -169.569
+margin_right = 753.851
+margin_bottom = -108.569
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit_type" type="TextEdit" parent="panel_boundary_edit_type"]
+margin_left = 84.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 26.0
+text = "boundary_a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_type_cancel" type="Button" parent="panel_boundary_edit_type"]
+margin_left = 205.007
+margin_top = 33.0917
+margin_right = 259.007
+margin_bottom = 53.0917
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_boundary_edit_type_ok" type="Button" parent="panel_boundary_edit_type"]
+margin_left = 261.64
+margin_top = 32.6198
+margin_right = 315.64
+margin_bottom = 52.6198
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="panel_boundary_edit_type"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 79.0
+margin_bottom = 23.0
+text = "type"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_actions" type="MenuButton" parent="."]
+margin_left = 352.02
+margin_top = 5.03967
+margin_right = 412.02
+margin_bottom = 25.0397
+text = "Actions"
+items = [ "create master block", null, 0, false, false, 0, 0, null, "", false, "create boundary", null, 0, false, false, 1, 0, null, "", false, "set cells", null, 0, false, false, 2, 0, null, "", false, "collapse point", null, 0, false, false, 3, 0, null, "", false, "remove blocks by selection", null, 0, false, false, 4, 0, null, "", false, "create arc by circle center", null, 0, false, false, 5, 0, null, "", false, "create arc by arc point", null, 0, false, false, 6, 0, null, "", false, "create spline", null, 0, false, false, 7, 0, null, "", false, "create polyLine", null, 0, false, false, 8, 0, null, "", false, "create BSpline", null, 0, false, false, 9, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_file" type="MenuButton" parent="."]
+margin_left = 413.02
+margin_top = 5.03967
+margin_right = 473.02
+margin_bottom = 25.0397
+text = "File"
+items = [ "generate blockMeshDict", null, 0, false, false, 0, 0, null, "", false, "save project", null, 0, false, false, 1, 0, null, "", false, "open project", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_view" type="MenuButton" parent="."]
+margin_left = 480.02
+margin_top = 5.03967
+margin_right = 540.02
+margin_bottom = 25.0397
+text = "View"
+items = [ "X Z", null, 0, false, false, 0, 0, null, "", false, "Y Z", null, 0, false, false, 1, 0, null, "", false, "X Y", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scene" type="Spatial" parent="."]
+
+[node name="center" type="Spatial" parent="scene"]
+
+[node name="points" type="Spatial" parent="scene/center"]
+
+[node name="b_lines" type="Spatial" parent="scene/center"]
+
+[node name="faces" type="Spatial" parent="scene/center"]
+
+[node name="xyz" parent="scene/center" instance=ExtResource( 7 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -6, 0 )
+environment = SubResource( 1 )
+projection = 1
+current = true
+size = 10.0
+
+[node name="hud" type="Node2D" parent="."]
+
+[node name="pop_boundary" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+items = [ "remove all faces", null, 0, false, false, 0, 0, null, "", false, "edit faces", null, 0, false, false, 1, 0, null, "", false, "add faces by box selection", null, 0, false, false, 2, 0, null, "", false, "remove faces by box selection", null, 0, false, false, 3, 0, null, "", false ]
+
+[node name="blockmeshFileDialog" type="FileDialog" parent="."]
+margin_right = 325.0
+margin_bottom = 130.0
+window_title = "Salvar um Arquivo"
+access = 2
+current_dir = "/home/manuel/godot/blockfoam"
+current_file = "blockMeshDict"
+current_path = "/home/manuel/godot/blockfoam/blockMeshDict"
+
+[node name="blockfoamFileDialog" type="FileDialog" parent="."]
+margin_right = 325.0
+margin_bottom = 130.0
+window_title = "Salvar um Arquivo"
+access = 2
+filters = PoolStringArray( "*.blkfoam" )
+current_dir = "/home/manuel/godot/blockfoam"
+current_path = "/home/manuel/godot/blockfoam/"
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.800533, -0.342477, 0.491789, 0.599289, 0.457483, -0.656934, 0, 0.820621, 0.571473, 0, 10.5936, 0 )
+
+[node name="ConfirmationRemoveBlock" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = "Are you sure?"
+
+[node name="ConfirmationRemoveEdge" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = "Are you sure?"
+
+[node name="ConfirmationRemoveEdgePoint" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = "Are you sure?"
+
+[node name="ConfirmationRemovePoint" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = "Are you sure?"
+
+[node name="ConfirmationRemoveBoundary" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = "Are you sure?"
+
+[node name="ConfirmationClearAll" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Confirme Por Favor..."
+dialog_text = " Erase everything? Are you sure?"
+
+[node name="openBlockfoamFileDialog" type="FileDialog" parent="."]
+margin_right = 325.0
+margin_bottom = 130.0
+window_title = "Abrir um Arquivo"
+mode = 0
+access = 2
+filters = PoolStringArray( "*.blkfoam" )
+show_hidden_files = true
+current_dir = "/home/manuel/godot/blockfoam"
+current_path = "/home/manuel/godot/blockfoam/"
+
+[node name="pop_grading" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+items = [ "simple grading", null, 0, false, false, 0, 0, null, "", false ]
+
+[node name="dialogInvalidEdge" type="AcceptDialog" parent="."]
+margin_right = 90.0
+margin_bottom = 58.0
+popup_exclusive = true
+window_title = "Alerta!"
+dialog_text = "Invalid edge points."
+
+[node name="Button_test" type="Button" parent="."]
+visible = false
+margin_left = 697.051
+margin_top = 6.60712
+margin_right = 765.051
+margin_bottom = 26.6071
+text = "teste"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pop_edit_curve" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+items = [ "add point", null, 0, false, false, 0, 0, null, "", false ]
+[connection signal="button_pressed" from="Tree" to="." method="_on_Tree_button_pressed"]
+[connection signal="item_selected" from="Tree" to="." method="_on_Tree_item_selected"]
+[connection signal="pressed" from="panel_edit_point/button_cancel" to="." method="_on_button_cancel_pressed"]
+[connection signal="pressed" from="panel_edit_point/button_ok" to="." method="_on_button_ok_pressed"]
+[connection signal="pressed" from="panel_edge_add_point/button_edge_add_point_cancel" to="." method="_on_button_edge_add_point_cancel_pressed"]
+[connection signal="pressed" from="panel_edge_add_point/button_edge_add_point_ok" to="." method="_on_button_edge_add_point_ok_pressed"]
+[connection signal="pressed" from="panel_add_point/button_add_point_cancel" to="." method="_on_button_add_point_cancel_pressed"]
+[connection signal="pressed" from="panel_add_point/button_add_point_ok" to="." method="_on_button_add_point_ok_pressed"]
+[connection signal="pressed" from="panel_add_block/button_add_block_cancel" to="." method="_on_button_add_block_cancel_pressed"]
+[connection signal="pressed" from="panel_add_block/button_add_block_ok" to="." method="_on_button_add_block_ok_pressed"]
+[connection signal="pressed" from="panel_create_master_block/button_cancel" to="." method="_on_button_create_master_block_cancel_pressed"]
+[connection signal="pressed" from="panel_create_master_block/button_ok" to="." method="_on_button_create_master_block_ok_pressed"]
+[connection signal="pressed" from="panel_set_cells/button_set_cell_cancel" to="." method="_on_button_set_cell_cancel_pressed"]
+[connection signal="pressed" from="panel_set_cells/button_set_cell_ok" to="." method="_on_button_set_cell_ok_pressed"]
+[connection signal="pressed" from="panel_block_edit_cells/button_block_edit_cell_cancel" to="." method="_on_button_block_edit_cell_cancel_pressed"]
+[connection signal="pressed" from="panel_block_edit_cells/button_block_edit_cell_ok" to="." method="_on_button_block_edit_cell_ok_pressed"]
+[connection signal="pressed" from="panel_block_edit_simple/button_block_edit_simple_cancel" to="." method="_on_button_block_edit_simple_cancel_pressed"]
+[connection signal="pressed" from="panel_block_edit_simple/button_block_edit_simple_ok" to="." method="_on_button_block_edit_simple_ok_pressed"]
+[connection signal="pressed" from="panel_block_edit_edge_grading/button_block_edit_edge_grading_cancel" to="." method="_on_button_block_edit_edge_grading_cancel_pressed"]
+[connection signal="pressed" from="panel_block_edit_edge_grading/button_block_edit_edge_grading_ok" to="." method="_on_button_block_edit_edge_grading_ok_pressed"]
+[connection signal="pressed" from="panel_collapse_points/button_collapse_point_cancel" to="." method="_on_button_collapse_point_cancel_pressed"]
+[connection signal="pressed" from="panel_collapse_points/button_collapse_point_ok" to="." method="_on_button_collapse_point_ok_pressed"]
+[connection signal="pressed" from="panel_boundary_add_faces/button_boundary_add_faces_cancel" to="." method="_on_button_boundary_add_faces_cancel_pressed"]
+[connection signal="pressed" from="panel_boundary_add_faces/button_boundary_add_faces_preview" to="." method="_on_button_boundary_add_faces_preview_pressed"]
+[connection signal="pressed" from="panel_boundary_add_faces/button_boundary_add_faces_ok" to="." method="_on_button_boundary_add_faces_ok_pressed"]
+[connection signal="pressed" from="panel_blocks_remove/button_blocks_remove_cancel" to="." method="_on_button_blocks_remove_cancel_pressed"]
+[connection signal="pressed" from="panel_blocks_remove/button_blocks_remove_preview" to="." method="_on_button_blocks_remove_preview_pressed"]
+[connection signal="pressed" from="panel_blocks_remove/button_blocks_remove_ok" to="." method="_on_button_blocks_remove_ok_pressed"]
+[connection signal="pressed" from="panel_box_sel/button_box_cancel" to="." method="_on_button_box_cancel_pressed"]
+[connection signal="pressed" from="panel_box_sel/button_box_ok" to="." method="_on_button_box_ok_pressed"]
+[connection signal="pressed" from="panel_arc_by_center/button_arc_by_center_cancel" to="." method="_on_button_arc_by_center_cancel_pressed"]
+[connection signal="pressed" from="panel_arc_by_center/button_arc_by_center_preview" to="." method="_on_button_arc_by_center_preview_pressed"]
+[connection signal="pressed" from="panel_arc_by_center/button_arc_by_center_ok" to="." method="_on_button_arc_by_center_ok_pressed"]
+[connection signal="text_changed" from="panel_translation/edit_translation_points" to="." method="_on_edit_translation_points_text_changed"]
+[connection signal="pressed" from="panel_translation/button_translation_cancel" to="." method="_on_button_translation_cancel_pressed"]
+[connection signal="pressed" from="panel_translation/button_translation_box" to="." method="_on_button_translation_box_pressed"]
+[connection signal="pressed" from="panel_translation/button_translation_ok" to="." method="_on_button_translation_ok_pressed"]
+[connection signal="text_changed" from="panel_rotation/edit_rotation_points" to="." method="_on_edit_rotation_points_text_changed"]
+[connection signal="pressed" from="panel_rotation/button_rotation_cancel" to="." method="_on_button_rotation_cancel_pressed"]
+[connection signal="pressed" from="panel_rotation/button_rotation_box" to="." method="_on_button_rotation_box_pressed"]
+[connection signal="pressed" from="panel_rotation/button_rotation_ok" to="." method="_on_button_rotation_ok_pressed"]
+[connection signal="text_changed" from="panel_scale/edit_scale_points" to="." method="_on_edit_scale_points_text_changed"]
+[connection signal="pressed" from="panel_scale/button_scale_cancel" to="." method="_on_button_scale_cancel_pressed"]
+[connection signal="pressed" from="panel_scale/button_scale_box" to="." method="_on_button_scale_box_pressed"]
+[connection signal="pressed" from="panel_scale/button_scale_ok" to="." method="_on_button_scale_ok_pressed"]
+[connection signal="pressed" from="panel_arc_by_point/button_arc_by_point_cancel" to="." method="_on_button_arc_by_point_cancel_pressed"]
+[connection signal="pressed" from="panel_arc_by_point/button_arc_by_point_preview" to="." method="_on_button_arc_by_point_preview_pressed"]
+[connection signal="pressed" from="panel_arc_by_point/button_arc_by_point_ok" to="." method="_on_button_arc_by_point_ok_pressed"]
+[connection signal="pressed" from="panel_edge_points/button_edge_points_cancel" to="." method="_on_button_edge_points_cancel_pressed"]
+[connection signal="pressed" from="panel_edge_points/button_edge_points_ok" to="." method="_on_button_edge_points_ok_pressed"]
+[connection signal="pressed" from="panel_create_boundary/button_boundary_cancel" to="." method="_on_button_boundary_cancel_pressed"]
+[connection signal="pressed" from="panel_create_boundary/button_boundary_ok" to="." method="_on_button_boundary_ok_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_faces/button_boundary_edit_faces_cancel" to="." method="_on_button_boundary_edit_faces_cancel_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_faces/button_boundary_edit_faces_ok" to="." method="_on_button_boundary_edit_faces_ok_pressed"]
+[connection signal="pressed" from="panel_block_edit_points/button_block_edit_points_cancel" to="." method="_on_button_block_edit_points_cancel_pressed"]
+[connection signal="pressed" from="panel_block_edit_points/button_block_edit_points_ok" to="." method="_on_button_block_edit_points_ok_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_name/button_boundary_edit_name_cancel" to="." method="_on_button_boundary_edit_name_cancel_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_name/button_boundary_edit_name_ok" to="." method="_on_button_boundary_edit_name_ok_pressed"]
+[connection signal="pressed" from="panel_block_edit_zone/button_block_edit_zone_cancel" to="." method="_on_button_block_edit_zone_cancel_pressed"]
+[connection signal="pressed" from="panel_block_edit_zone/button_block_edit_zone_ok" to="." method="_on_button_block_edit_zone_ok_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_type/button_boundary_edit_type_cancel" to="." method="_on_button_boundary_edit_type_cancel_pressed"]
+[connection signal="pressed" from="panel_boundary_edit_type/button_boundary_edit_type_ok" to="." method="_on_button_boundary_edit_type_ok_pressed"]
+[connection signal="id_pressed" from="pop_boundary" to="." method="_on_pop_boundary_id_pressed"]
+[connection signal="file_selected" from="blockmeshFileDialog" to="." method="_on_blockmeshFileDialog_file_selected"]
+[connection signal="file_selected" from="blockfoamFileDialog" to="." method="_on_blockfoamFileDialog_file_selected"]
+[connection signal="confirmed" from="ConfirmationRemoveBlock" to="." method="_on_ConfirmationRemoveBlock_confirmed"]
+[connection signal="confirmed" from="ConfirmationRemoveEdge" to="." method="_on_ConfirmationRemoveEdge_confirmed"]
+[connection signal="confirmed" from="ConfirmationRemoveEdgePoint" to="." method="_on_ConfirmationRemoveEdgePoint_confirmed"]
+[connection signal="confirmed" from="ConfirmationRemovePoint" to="." method="_on_ConfirmationRemovePoint_confirmed"]
+[connection signal="confirmed" from="ConfirmationRemoveBoundary" to="." method="_on_ConfirmationRemoveBoundary_confirmed"]
+[connection signal="confirmed" from="ConfirmationClearAll" to="." method="_on_ConfirmationClearAll_confirmed"]
+[connection signal="file_selected" from="openBlockfoamFileDialog" to="." method="_on_openBlockfoamFileDialog_file_selected"]
+[connection signal="id_pressed" from="pop_grading" to="." method="_on_pop_grading_id_pressed"]
+[connection signal="pressed" from="Button_test" to="." method="_on_Button_test_pressed"]
+[connection signal="id_pressed" from="pop_edit_curve" to="." method="_on_pop_edit_curve_id_pressed"]
