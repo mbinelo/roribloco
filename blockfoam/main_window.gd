@@ -59,6 +59,8 @@ func _ready():
 	$panel_edit_point.visible=false
 	update_tree()
 	init_menu()
+	print(float2str(12.1234567891011121314151617181920))
+	print(float2str(12.12))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -99,6 +101,19 @@ func _input(event):
 	if event is InputEventMouse:
 		mouse_position = event.position
 
+
+func float2str(v):
+	var res="%.20f" % v	
+	var continua=true
+	while continua:
+		var s=res.length()
+		res=res.trim_suffix("0")
+		if s==res.length():
+			continua=false
+			if res=="":
+				res=0 
+				res=res.trim_sufix(".")
+	return res
 
 func init_menu():
 	
@@ -247,7 +262,7 @@ func update_tree():
 	item.set_text(0, "unused faces")	
 	for i in range(unused_faces.size()):
 		var p = $Tree.create_item(item)
-		p.set_text(0, "f_"+str(i))
+		p.set_text(0, "f_"+str(unused_faces[i]))
 	
 	$Tree.hide_root=true
 	vroot=tree.get_root()
@@ -1015,7 +1030,7 @@ func generate_blockmesh(filename):
 		file.store_line("vertices")
 		file.store_line("(")
 		for p in points:
-			file.store_line("    ("+str(p.x)+" "+str(p.y)+" "+str(p.z)+")")
+			file.store_line("    ("+float2str(p.x)+" "+float2str(p.y)+" "+float2str(p.z)+")")
 		file.store_line(");")
 		
 		file.store_line("blocks")
@@ -1027,12 +1042,12 @@ func generate_blockmesh(filename):
 		file.store_line("(")
 		for e in edges:
 			if e[0]=="arc":
-				file.store_line("arc "+str(e[1])+" "+str(e[2])+" ("+str(e[3][0].x)+" "+str(e[3][0].y)+" "+str(e[3][0].z)+")")
+				file.store_line("arc "+str(e[1])+" "+str(e[2])+" ("+float2str(e[3][0].x)+" "+float2str(e[3][0].y)+" "+float2str(e[3][0].z)+")")
 			else:
 				file.store_line(e[0]+" "+str(e[1])+" "+str(e[2]))
 				file.store_line("(")
 				for ep in e[3]:
-					file.store_line(" ("+str(ep.x)+" "+str(ep.y)+" "+str(ep.z)+")")
+					file.store_line(" ("+float2str(ep.x)+" "+float2str(ep.y)+" "+float2str(ep.z)+")")
 				file.store_line(")")
 		file.store_line(");")
 		
@@ -1078,10 +1093,10 @@ func save_file(filename):
 	var error = file.open(filename, File.WRITE)
 	if error == OK:
 
-		file.store_line("blockfoam 0.3")
+		file.store_line("blockfoam 0.4")
 		file.store_line(str(points.size()))
 		for p in points:
-			file.store_line(str(p.x)+";"+str(p.y)+";"+str(p.z))
+			file.store_line(float2str(p.x)+";"+float2str(p.y)+";"+float2str(p.z))
 
 		#[points],[cells],[grading],[externalfaces],zone
 		file.store_line(str(blocks.size()))
@@ -1106,7 +1121,7 @@ func save_file(filename):
 			file.store_line(str(e[2]))
 			file.store_line(str(e[3].size()))
 			for p in e[3]:
-				file.store_line(str(p.x)+";"+str(p.y)+";"+str(p.z))
+				file.store_line(float2str(p.x)+";"+float2str(p.y)+";"+float2str(p.z))
 		
 		
 	else:
@@ -1492,12 +1507,12 @@ func _on_button_boundary_add_faces_cancel_pressed():
 
 
 func _on_button_boundary_add_faces_ok_pressed():
-		var xini=float($panel_boundary_add_faces/edit_x_ini.text)
-		var yini=float($panel_boundary_add_faces/edit_y_ini.text)
-		var zini=float($panel_boundary_add_faces/edit_z_ini.text)
-		var xfim=float($panel_boundary_add_faces/edit_x_fim.text)
-		var yfim=float($panel_boundary_add_faces/edit_y_fim.text)
-		var zfim=float($panel_boundary_add_faces/edit_z_fim.text)
+		var xini=min(float($panel_boundary_add_faces/edit_x_ini.text),float($panel_boundary_add_faces/edit_x_fim.text))
+		var yini=min(float($panel_boundary_add_faces/edit_y_ini.text),float($panel_boundary_add_faces/edit_y_fim.text))
+		var zini=min(float($panel_boundary_add_faces/edit_z_ini.text),float($panel_boundary_add_faces/edit_z_fim.text))
+		var xfim=max(float($panel_boundary_add_faces/edit_x_ini.text),float($panel_boundary_add_faces/edit_x_fim.text))
+		var yfim=max(float($panel_boundary_add_faces/edit_y_ini.text),float($panel_boundary_add_faces/edit_y_fim.text))
+		var zfim=max(float($panel_boundary_add_faces/edit_z_ini.text),float($panel_boundary_add_faces/edit_z_fim.text))
 		for i in faces.size():
 			var is_in=true			
 			for p in faces[i][0]:
@@ -1653,12 +1668,12 @@ func _on_ConfirmationRemoveBoundary_confirmed():
 
 
 func _on_button_boundary_add_faces_preview_pressed():
-		var xini=float($panel_boundary_add_faces/edit_x_ini.text)
-		var yini=float($panel_boundary_add_faces/edit_y_ini.text)
-		var zini=float($panel_boundary_add_faces/edit_z_ini.text)
-		var xfim=float($panel_boundary_add_faces/edit_x_fim.text)
-		var yfim=float($panel_boundary_add_faces/edit_y_fim.text)
-		var zfim=float($panel_boundary_add_faces/edit_z_fim.text)
+		var xini=min(float($panel_boundary_add_faces/edit_x_ini.text),float($panel_boundary_add_faces/edit_x_fim.text))
+		var yini=min(float($panel_boundary_add_faces/edit_y_ini.text),float($panel_boundary_add_faces/edit_y_fim.text))
+		var zini=min(float($panel_boundary_add_faces/edit_z_ini.text),float($panel_boundary_add_faces/edit_z_fim.text))
+		var xfim=max(float($panel_boundary_add_faces/edit_x_ini.text),float($panel_boundary_add_faces/edit_x_fim.text))
+		var yfim=max(float($panel_boundary_add_faces/edit_y_ini.text),float($panel_boundary_add_faces/edit_y_fim.text))
+		var zfim=max(float($panel_boundary_add_faces/edit_z_ini.text),float($panel_boundary_add_faces/edit_z_fim.text))
 		unselect_all_faces()
 		for i in faces.size():
 			var is_in=true			
@@ -1677,12 +1692,12 @@ func _on_button_blocks_remove_preview_pressed():
 		unselect_all_faces()
 		unselect_all_lines()
 		unselect_all_points()
-		var xini=float($panel_blocks_remove/edit_x_ini.text)
-		var yini=float($panel_blocks_remove/edit_y_ini.text)
-		var zini=float($panel_blocks_remove/edit_z_ini.text)
-		var xfim=float($panel_blocks_remove/edit_x_fim.text)
-		var yfim=float($panel_blocks_remove/edit_y_fim.text)
-		var zfim=float($panel_blocks_remove/edit_z_fim.text)
+		var xini=min(float($panel_blocks_remove/edit_x_ini.text),float($panel_blocks_remove/edit_x_fim.text))
+		var yini=min(float($panel_blocks_remove/edit_y_ini.text),float($panel_blocks_remove/edit_y_fim.text))
+		var zini=min(float($panel_blocks_remove/edit_z_ini.text),float($panel_blocks_remove/edit_z_fim.text))
+		var xfim=max(float($panel_blocks_remove/edit_x_ini.text),float($panel_blocks_remove/edit_x_fim.text))
+		var yfim=max(float($panel_blocks_remove/edit_y_ini.text),float($panel_blocks_remove/edit_y_fim.text))
+		var zfim=max(float($panel_blocks_remove/edit_z_ini.text),float($panel_blocks_remove/edit_z_fim.text))
 		
 		for i in blocks.size():
 			var is_in=true			
@@ -1700,12 +1715,12 @@ func _on_button_blocks_remove_cancel_pressed():
 
 
 func _on_button_blocks_remove_ok_pressed():
-		var xini=float($panel_blocks_remove/edit_x_ini.text)
-		var yini=float($panel_blocks_remove/edit_y_ini.text)
-		var zini=float($panel_blocks_remove/edit_z_ini.text)
-		var xfim=float($panel_blocks_remove/edit_x_fim.text)
-		var yfim=float($panel_blocks_remove/edit_y_fim.text)
-		var zfim=float($panel_blocks_remove/edit_z_fim.text)
+		var xini=min(float($panel_blocks_remove/edit_x_ini.text),float($panel_blocks_remove/edit_x_fim.text))
+		var yini=min(float($panel_blocks_remove/edit_y_ini.text),float($panel_blocks_remove/edit_y_fim.text))
+		var zini=min(float($panel_blocks_remove/edit_z_ini.text),float($panel_blocks_remove/edit_z_fim.text))
+		var xfim=max(float($panel_blocks_remove/edit_x_ini.text),float($panel_blocks_remove/edit_x_fim.text))
+		var yfim=max(float($panel_blocks_remove/edit_y_ini.text),float($panel_blocks_remove/edit_y_fim.text))
+		var zfim=max(float($panel_blocks_remove/edit_z_ini.text),float($panel_blocks_remove/edit_z_fim.text))
 		
 		var removed=true
 		while removed==true:
@@ -1930,12 +1945,12 @@ func _on_button_box_cancel_pressed():
 
 
 func _on_button_box_ok_pressed():
-	var xini=float($panel_box_sel/edit_x_ini.text)
-	var yini=float($panel_box_sel/edit_y_ini.text)
-	var zini=float($panel_box_sel/edit_z_ini.text)
-	var xfim=float($panel_box_sel/edit_x_fim.text)
-	var yfim=float($panel_box_sel/edit_y_fim.text)
-	var zfim=float($panel_box_sel/edit_z_fim.text)	
+	var xini=min(float($panel_box_sel/edit_x_ini.text),float($panel_box_sel/edit_x_fim.text))
+	var yini=min(float($panel_box_sel/edit_y_ini.text),float($panel_box_sel/edit_y_fim.text))
+	var zini=min(float($panel_box_sel/edit_z_ini.text),float($panel_box_sel/edit_z_fim.text))
+	var xfim=max(float($panel_box_sel/edit_x_ini.text),float($panel_box_sel/edit_x_fim.text))
+	var yfim=max(float($panel_box_sel/edit_y_ini.text),float($panel_box_sel/edit_y_fim.text))
+	var zfim=max(float($panel_box_sel/edit_z_ini.text),float($panel_box_sel/edit_z_fim.text))
 	edit_ref.text=""
 	for i in range(points.size()):
 		if points[i].x>=xini and points[i].y>=yini and points[i].z>=zini and points[i].x<=xfim and points[i].y<=yfim and points[i].z<=zfim:

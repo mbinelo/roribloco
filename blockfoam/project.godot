@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="RoriBloco"
+config/name="RoriBloco 0.4"
 run/main_scene="res://main_window.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
