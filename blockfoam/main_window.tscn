@@ -2472,11 +2472,13 @@ __meta__ = {
 [node name="xyz" parent="scene/center" instance=ExtResource( 7 )]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -6, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -2000, 0 )
 environment = SubResource( 1 )
 projection = 1
 current = true
 size = 10.0
+near = 0.01
+far = 10000.0
 
 [node name="hud" type="Node2D" parent="."]
 
@@ -2551,7 +2553,7 @@ dialog_text = " Erase everything? Are you sure?"
 [node name="openBlockfoamFileDialog" type="FileDialog" parent="."]
 margin_right = 325.0
 margin_bottom = 130.0
-window_title = "Abrir um Arquivo"
+window_title = "Open a File"
 mode = 0
 access = 2
 filters = PoolStringArray( "*.blkfoam" )
@@ -2586,6 +2588,7 @@ __meta__ = {
 margin_right = 20.0
 margin_bottom = 20.0
 items = [ "add point", null, 0, false, false, 0, 0, null, "", false ]
+
 [connection signal="button_pressed" from="Tree" to="." method="_on_Tree_button_pressed"]
 [connection signal="item_selected" from="Tree" to="." method="_on_Tree_item_selected"]
 [connection signal="pressed" from="panel_edit_point/button_cancel" to="." method="_on_button_cancel_pressed"]
